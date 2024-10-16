@@ -15,9 +15,8 @@
           const Email = document.getElementById("Email").value;
           const Contraseña = document.getElementById("Contraseña").value;
           const ConfirmarContraseña = document.getElementById("ConfirmarContraseña").value;
-          const Terminos = document.getElementById("Terminos").checked;
     
-          if (Nombres === "" || Apellidos === "" || Email === "" || Contraseña === "" || ConfirmarContraseña === "" || !Terminos) {
+          if (Nombres === "" || Apellidos === "" || Email === "" || Contraseña === "" || ConfirmarContraseña === "") {
               alert("Todos los campos son obligatorios.");
           } else {
               alert("¡Registro exitoso!");
