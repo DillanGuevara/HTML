@@ -7,6 +7,24 @@
 
     <link rel="stylesheet" href="./styles1.css">
 
+    <script>
+        function validarFormulario(event) {
+          event.preventDefault();
+    
+          const Plato = document.getElementById("Plato").value;
+          const Precio = document.getElementById("Precio").value;
+          const Cantidad = document.getElementById("Cantidad").value;
+    
+          if (Plato === "" || Precio === "" || Cantidad === "") {
+              alert("Todos los campos son obligatorios.");
+          } else {
+              alert("¡Registro exitoso!");
+              // Limpiar el formulario después del envío
+              document.getElementById("Formulario").reset();
+          }
+        }
+    </script>
+
 <style>
     table, th, td {
         border:1px solid black;
@@ -22,12 +40,49 @@
             <h1>Colombia</h1>
         </center>
 
-    <section>
-        <br/>
-        <button type="submit">Inicio</button>
-        <button type="submit">Agregar plato</button>
-        <br/><br/>
-    </section>
+        <section>
+            <br/>
+            <button type="submit" onclick="location='./index.html'">Inicio</button>
+            <button type="submit" id="open">Agregar plato</button>
+            <br/><br/>
+
+            <div class="modal-container" id="modal_container">
+                <div class="modal">
+                    <form id="Formulario">
+
+                        <center>
+                            <h1>Ingresar nuevo plato</h1>
+
+                            <label for="Plato">Plato:</label>
+                            <input type="text" id="Plato" name="Plato" placeholder="Plato" required></input><br/><br/>
+                            
+                            <label for="Precio">Precio:</label>
+                            <input type="text" id="Precio" name="Precio" placeholder="Precio" required></input><br/><br/>
+                            
+                            <label for="Cantidad">Cantidad:</label>
+                            <input type="text" id="Cantidad" name="Cantidad" placeholder="Cantidad" required></input><br/><br/>
+
+                            <label for="Imagen">Imagen:</label>
+                            <input type="file" required></input><br/><br/>
+    
+                            <button action='submit'>Guardar</button>
+                        </center>
+                    </form><br/>
+                    
+                    <form>
+                        <button id="close">Cerrar</button><br/><br/>
+                    </form>
+
+                </div>
+            </div>
+
+            <script src="./modal.js"></script>
+
+            <script>
+                document.getElementById("Formulario").addEventListener("submit", validarFormulario);
+            </script>
+
+        </section>
 
     <br/><br/>
 
@@ -61,17 +116,29 @@
         <center>
             <div class="Ciudades-3">
                 <h2>Bogotá</h2>
-                <text>Subsede principal</text>
+                <text>Subsede principal</text></br>
+                <details></br>
+                    <img src="./img/Bogotá.jpg" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra subsede principal de Colombia abrió en el año 2015</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-4">
                 <h2>Medellín</h2>
-                <text>Subsede</text>
+                <text>Subsede</text></br>
+                <details></br>
+                    <img src="./img/Medellín.jpg" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra segunda subsede de Colombia abrió en el año 2019</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-2">
                 <h2>Cali</h2>
-                <text>Subsede</text>
+                <text>Subsede</text></br>
+                <details></br>
+                    <img src="./img/Cali.jpg" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra tercera subsede de Colombia abrió en el año 2022</text>
+                </details>
             </div><br/><br/><br/>
         </center>
 

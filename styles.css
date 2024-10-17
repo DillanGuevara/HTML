@@ -8,14 +8,20 @@ nav {
     height: 75px;
 }
 
+input {
+    padding: 4.5px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
 section {
     background-color: teal;
 }
 
 div {
     margin-left: 1600px;
-        background: #f2f2f2;
-        text-align: center;
+    background: #f2f2f2;
+    text-align: center;
 }
 
 table, th, td {
@@ -77,11 +83,55 @@ text {
 }
 
 button {
-    background-color: lightgrey;
-    border-color: lightgray;
+    background-color: white;
+    border: 0;
+    border-radius: 0;
+    padding: 5px 5px;
 }
 
 fieldset {
     background-color: rgb(238, 56, 56);
     border-color: rgb(238, 56, 56);
+}
+
+i {
+       background-color: white;
+}
+
+.Menu-horizontal {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Menu-horizontal > li > a {
+    display: block;
+    padding: 15px 20px;
+}
+
+.Menu-horizontal > li:hover {
+    background-color: rgb(253, 131, 44);
+}
+
+.Menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    padding: 20px 20px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.Menu-horizontal li:hover .Menu-vertical {
+    display: block;
+}
+
+.Menu-vertical li:hover {
+    background-color: black;
+}
+
+.Menu-vertical li a {
+    display: block;
+    color: white;
+    padding: 15p 15px 15px 20px;
 }

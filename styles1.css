@@ -40,6 +40,8 @@ textarea {
     width: 40%;
     height: 80px;
     resize: none;
+    border-radius: 5px 0 0 5px;
+    border: none;
 }
 
 button {
@@ -51,6 +53,26 @@ button {
 }
 
 text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    height: 10px;
+    background-color: lightgrey;
+}
+
+th {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -106,4 +128,36 @@ text {
     margin: 20px;
     padding: 20px;
     width: 800px;
+}
+
+.modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: darkseagreen;
+    top: 0;
+    left: 0;
+    height: 350px;
+    width: 350px;
+    max-width: 100%;
+    padding: 40px 60px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }

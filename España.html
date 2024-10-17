@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles1.css">
     <title>Cocina España</title>
 
-    <link rel="stylesheet" href="./styles1.css">
+    <script>
+        function validarFormulario(event) {
+          event.preventDefault();
+    
+          const Plato = document.getElementById("Plato").value;
+          const Precio = document.getElementById("Precio").value;
+          const Cantidad = document.getElementById("Cantidad").value;
+    
+          if (Plato === "" || Precio === "" || Cantidad === "") {
+              alert("Todos los campos son obligatorios.");
+          } else {
+              alert("¡Registro exitoso!");
+              // Limpiar el formulario después del envío
+              document.getElementById("Formulario").reset();
+          }
+        }
+    </script>
 
 <style>
     table, th, td {
@@ -24,11 +41,47 @@
 
         <section>
             <br/>
-            <button type="submit">Inicio</button>
-            <button type="submit">Agregar plato</button>
+            <button type="submit" onclick="location='./index.html'">Inicio</button>
+            <button type="submit" id="open">Agregar plato</button>
             <br/><br/>
-        </section>
 
+            <div class="modal-container" id="modal_container">
+                <div class="modal">
+                    <form id="Formulario">
+
+                        <center>
+                            <h1>Ingresar nuevo plato</h1>
+
+                            <label for="Plato">Plato:</label>
+                            <input type="text" id="Plato" name="Plato" placeholder="Plato" required></input><br/><br/>
+                            
+                            <label for="Precio">Precio:</label>
+                            <input type="text" id="Precio" name="Precio" placeholder="Precio" required></input><br/><br/>
+                            
+                            <label for="Cantidad">Cantidad:</label>
+                            <input type="text" id="Cantidad" name="Cantidad" placeholder="Cantidad" required></input><br/><br/>
+
+                            <label for="Imagen">Imagen:</label>
+                            <input type="file" required></input><br/><br/>
+    
+                            <button action='submit'>Guardar</button>
+                        </center>
+                    </form><br/>
+                    
+                    <form>
+                        <button id="close">Cerrar</button><br/><br/>
+                    </form>
+
+                </div>
+            </div>
+
+            <script src="./modal.js"></script>
+
+            <script>
+                document.getElementById("Formulario").addEventListener("submit", validarFormulario);
+            </script>
+
+        </section>
     <br/><br/>
 
         <center>
@@ -60,34 +113,58 @@
 
         <center>
             <div class="Ciudades-3">
-                <a href="./Madrid.html"><h2>Madrid</h2>
-                <text>Sede principal<br/>
-                El principio de todo</text></a>
+                <a href="./Madrid-1.html"><h2>Madrid</h2>
+                <text>Sede principal</br>
+                El principio de todo</text></a></br>
+                <details></br>
+                    <img src="./img/Madrid-1.jpg" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra sede principal, abrió e inició  todo en el año 2005</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-2">
                 <h2>Valencia</h2>
-                <text>Subsede</text>
+                <text>Subsede</text></br>
+                <details></br>
+                    <img src="./img/Valencia.webp" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra segunda subsede abrió en el año 2006</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-2">
                 <h2>Barcelona</h2>
-                <text>Subsede</text>
+                <text>Subsede</text></br>
+                <details></br>
+                    <img src="./img/Barcelona.webp" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra tercera subsede abrió en el año 2007</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-2">
                 <h2>Sevilla</h2>
-                <text>Subsede principal</text>
+                <text>Subsede principal</text></br>
+                <details></br>
+                    <img src="./img/Sevilla.jpg" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra cuarta subsede abrió en el año 2008</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-2">
                 <h2>Vigo</h2>
-                <text>Subsede</text>
+                <text>Subsede</text></br>
+                <details></br>
+                    <img src="./img/Vigo.jpg" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra quinta subsede abrió en el año 2009</text>
+                </details>
             </div><br/><br/><br/>
 
             <div class="Ciudades-3">
                 <h2>Bilbao</h2>
-                <text>Subsede</text>
+                <text>Subsede</text></br>
+                <details></br>
+                    <img src="./img/Bilbao.avif" style="width: 50%; height: 250px;"></br></br>
+                    <text>Nuestra sexta subsede abrió en el año 2010</text>
+                </details>
             </div><br/><br/><br/>
         </center>
 
