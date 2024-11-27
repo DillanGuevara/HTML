@@ -80,11 +80,70 @@
             <h3>Tus opiniones son importantes para nosotros</h3>    
             <text>Tus comentarios ayudarán a mejorar nuestro servicio, y a brindarte soluciones de manera rápida</text><br/><br/>
 
-                <form id="Formulario">
-                    <textarea id="PQRS" name="PQRS" placeholder="Escribe aquí tu petición..."></textarea><br/><br/>
-                    <button type="submit">Enviar</button><br/><br/><br/>
-                </form>
+            <form id="form">
+                <div class="field">
+                  <label for="Email">Email:</label>
+                  <input type="text" name="Email" id="Email" placeholder="Email"><br/><br/>
+                </div>
+                <div class="field">
+                  <label for="PQRS">PQRS:</label>
+                  <input type="text" name="PQRS" id="PQRS" placeholder="Escribe aquí tu petición..."><br/><br/>
+                </div>
+              
+                <input type="submit" id="button" value="Enviar" ><br/><br/><br/>
+              </form>
+              
+              <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+              
+              <script type="text/javascript">
+                emailjs.init('1iGo7JPcwlYksEEWV')
+              </script>
         </center>
+
+        <script>
+            const btn = document.getElementById('button');
+
+            document.getElementById('form')
+                .addEventListener('submit', function(e) {
+            e.preventDefault();
+
+                const serviceID = 'default_service';
+                const templateID = 'template_cbppy3n';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                    btn.value = 'Recuperar Contraseña';
+                    Swal.fire({
+                            title: "¡Gracias por tus comentarios!",
+                            html: "<p class=swal-text>¡Mejoraremos para ofrecerte un mejor servicio!</p>",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            customClass: {
+                                title: "swal-title",
+                                popup: "swal-popup",
+                                confirmButton: "swal-confirm"
+                            }
+                        });
+                        document.getElementById("form").reset();
+                    }, (err) => {
+                    btn.value = 'Enviar';
+                    if (NuevaContraseña === "" || ConfirmarContraseña === "") {
+                    Swal.fire({
+                            title: "¡Por favor, llena todos los campos!",
+                            html: "<p class=swal-text>Llena el formulario para continuar</p>",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            customClass: {
+                                title: "swal-title",
+                                popup: "swal-popup",
+                                confirmButton: "swal-confirm"
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
 
         <script>
             document.getElementById("Formulario").addEventListener("submit", validarFormulario);
