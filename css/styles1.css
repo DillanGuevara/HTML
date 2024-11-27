@@ -682,3 +682,39 @@ body.active .failure {
 #preview {
     margin-top: 10px;
 }
+
+form #button {
+    background-color: #132b41;
+    color: white;
+    border-color: purple;
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+}
+
+body.active section form #button {
+    background-color: darkgrey;
+    color: black;
+    border-color: purple;
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+}
+
+form #button1 {
+    background-color: #132b41;
+    color: white;
+    border-color: purple;
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+}
+
+body.active section form #button1 {
+    background-color: darkgrey;
+    color: black;
+    border-color: purple;
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+}
