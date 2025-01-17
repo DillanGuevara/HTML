@@ -23,14 +23,14 @@ function comprarProducto(button) {
     const productoDiv = button.closest('.producto');
     const nombreProducto = productoDiv.getAttribute('data-nombre');
 
-    window.location.href = `map-España.html?producto=${encodeURIComponent(nombreProducto)}`;
+    window.location.href = `map-Espana.html?producto=${encodeURIComponent(nombreProducto)}`;
 }
 
 function comprarProductoMex(button) {
     const productoDiv = button.closest('.producto-Mex');
     const nombreProducto = productoDiv.getAttribute('data-nombre');
 
-    window.location.href = `map-México.html?producto=${encodeURIComponent(nombreProducto)}`;
+    window.location.href = `map-Mexico.html?producto=${encodeURIComponent(nombreProducto)}`;
 }
 
 function comprarProductoArg(button) {
@@ -51,5 +51,5 @@ function comprarProductoPer(button) {
     const productoDiv = button.closest('.producto-Per');
     const nombreProducto = productoDiv.getAttribute('data-nombre');
 
-    window.location.href = `map-Perú.html?producto=${encodeURIComponent(nombreProducto)}`;
+    window.location.href = `map-Peru.html?producto=${encodeURIComponent(nombreProducto)}`;
 }
